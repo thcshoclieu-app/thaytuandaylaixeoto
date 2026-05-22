@@ -83,7 +83,7 @@ export default function Contact() {
                   {info.icon}
                 </div>
                 <h4 className="text-gray-400 font-medium mb-2 uppercase tracking-wide text-sm relative z-10">{info.title}</h4>
-                <p className={`text-[16px] min-[360px]:text-[17px] md:text-sm lg:text-[17px] xl:text-xl font-heading font-bold text-white transition-colors duration-300 whitespace-nowrap tracking-tight relative z-10 ${
+                <p className={`text-[15px] sm:text-[17px] md:text-sm lg:text-[17px] xl:text-xl font-heading font-bold text-white transition-colors duration-300 tracking-tight relative z-10 ${
                   info.color === 'yellow' ? 'group-hover:text-[#ccff00]' : info.color === 'green' ? 'group-hover:text-[#39ff14]' : 'group-hover:text-[#ff003c]'
                 }`}>
                   {info.value}

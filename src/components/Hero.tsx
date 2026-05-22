@@ -2,8 +2,12 @@ import { motion } from 'motion/react';
 import { ArrowRight, Car, Shield } from 'lucide-react';
 
 export default function Hero() {
-  const scrollToServices = () => {
-    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToServices = (tab: string) => {
+    window.location.hash = tab;
+    // Small delay to allow state update if needed before scroll
+    setTimeout(() => {
+      document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+    }, 10);
   };
 
   return (
@@ -28,10 +32,10 @@ export default function Hero() {
               initial={{ opacity: 0, x: -60 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="text-[30px] min-[400px]:text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-bold uppercase leading-[1.1] tracking-tight text-left drop-shadow-2xl ml-[2%] sm:ml-[5%] lg:ml-[10%] whitespace-nowrap"
+              className="text-[28px] min-[375px]:text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold uppercase leading-[1.1] tracking-tight text-left drop-shadow-2xl ml-[5%] sm:ml-[10%] flex whitespace-nowrap items-center"
             >
-              <span className="text-white transition-colors duration-300 hover:text-gray-200">Làm chủ </span>
-              <span className="text-[#ccff00] glow-text-yellow relative inline-block group whitespace-nowrap">
+              <span className="text-white transition-colors duration-300 hover:text-gray-200 mr-2 sm:mr-4">Làm chủ </span>
+              <span className="text-[#ccff00] glow-text-yellow relative inline-block group shrink-0">
                 <span className="absolute -inset-2 rounded-full blur-xl bg-[#ccff00] opacity-0 group-hover:opacity-40 transition-opacity duration-500"></span>
                 <span className="inline-block transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-2">vô lăng</span>
               </span>
@@ -41,10 +45,10 @@ export default function Hero() {
               initial={{ opacity: 0, x: 60 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="text-[30px] min-[400px]:text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-bold uppercase leading-[1.1] tracking-tight text-right drop-shadow-2xl mr-[2%] sm:mr-[5%] lg:mr-[10%] whitespace-nowrap"
+              className="text-[28px] min-[375px]:text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold uppercase leading-[1.1] tracking-tight text-right drop-shadow-2xl mr-[5%] sm:mr-[10%] flex whitespace-nowrap items-center justify-end"
             >
-              <span className="text-white transition-colors duration-300 hover:text-gray-200">Làm chủ </span>
-              <span className="text-[#39ff14] glow-text-green relative inline-block group whitespace-nowrap">
+              <span className="text-white transition-colors duration-300 hover:text-gray-200 mr-2 sm:mr-4">Làm chủ </span>
+              <span className="text-[#39ff14] glow-text-green relative inline-block group shrink-0">
                 <span className="absolute -inset-2 rounded-full blur-xl bg-[#39ff14] opacity-0 group-hover:opacity-40 transition-opacity duration-500"></span>
                 <span className="inline-block transition-transform duration-500 group-hover:scale-110 group-hover:rotate-2">cuộc đời</span>
               </span>
@@ -52,16 +56,16 @@ export default function Hero() {
           </div>
 
           {/* Sub heading */}
-          <p className="text-xl md:text-2xl text-gray-300 font-medium tracking-widest uppercase mt-6 mb-10 flex items-center justify-center gap-4">
-            <span className="h-[1px] w-12 bg-gray-600 hidden sm:block"></span>
-            Gửi trọn niềm tin <span className="text-[#ccff00] mx-2 text-2xl">★</span> Kết nối yêu thương
-            <span className="h-[1px] w-12 bg-gray-600 hidden sm:block"></span>
+          <p className="text-lg md:text-2xl text-gray-300 font-medium tracking-widest uppercase mt-6 mb-10 flex items-center justify-center gap-2 sm:gap-4 flex-wrap px-2">
+            <span className="h-[1px] w-8 sm:w-12 bg-gray-600 hidden sm:block"></span>
+            <span className="whitespace-nowrap">Gửi trọn niềm tin</span> <span className="text-[#ccff00] text-xl sm:text-2xl">★</span> <span className="whitespace-nowrap">Kết nối yêu thương</span>
+            <span className="h-[1px] w-8 sm:w-12 bg-gray-600 hidden sm:block"></span>
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-6 mt-12">
             <button
-              onClick={scrollToServices}
+              onClick={() => scrollToServices('dang-ky')}
               className="group relative px-8 py-4 bg-[#ccff00] text-[#050505] font-heading font-bold text-lg uppercase tracking-wider overflow-hidden rounded-md transition-all hover:scale-105 glow-box-yellow w-full sm:w-auto flex items-center justify-center gap-2"
             >
               <span className="relative z-10">Đăng Ký Học</span>
@@ -70,7 +74,7 @@ export default function Hero() {
             </button>
 
             <button
-              onClick={scrollToServices}
+              onClick={() => scrollToServices('dat-xe')}
               className="group relative px-8 py-4 bg-[#39ff14] text-[#050505] font-heading font-bold text-lg uppercase tracking-wider overflow-hidden rounded-md transition-all hover:scale-105 glow-box-green w-full sm:w-auto flex items-center justify-center gap-2"
             >
               <span className="relative z-10">Đặt Xe Ngay</span>
@@ -79,8 +83,8 @@ export default function Hero() {
             </button>
 
             <button
-              onClick={scrollToServices}
-              className="group relative px-8 py-4 bg-[#ff003c] text-white font-heading font-bold text-lg uppercase tracking-wider overflow-hidden rounded-md transition-all hover:scale-105 glow-box-red w-full sm:w-auto flex items-center justify-center gap-2"
+              onClick={() => scrollToServices('bo-tuc')}
+              className="group relative px-8 py-4 bg-[#00bfff] text-[#050505] font-heading font-bold text-lg uppercase tracking-wider overflow-hidden rounded-md transition-all hover:scale-105 glow-box-cyan w-full sm:w-auto flex items-center justify-center gap-2"
             >
               <span className="relative z-10">Bổ Túc Tay Lái</span>
               <Shield size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />

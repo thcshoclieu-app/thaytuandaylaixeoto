@@ -1,10 +1,26 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Send, Car, BookOpen, Shield, CheckCircle, Loader2 } from 'lucide-react';
 
 export default function Services() {
   const [submitting, setSubmitting] = useState<number | null>(null);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [activeTab, setActiveTab] = useState<string>('dang-ky');
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (['dang-ky', 'dat-xe', 'bo-tuc'].includes(hash)) {
+        setActiveTab(hash);
+      }
+    };
+    
+    // Check initial hash
+    handleHashChange();
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>, formId: number, email: string) => {
     e.preventDefault();
@@ -86,14 +102,39 @@ export default function Services() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-12">
+        {/* Tab Buttons */}
+        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 mb-10 relative z-10 w-full max-w-4xl mx-auto">
+          <button 
+            onClick={() => { setActiveTab('dang-ky'); window.location.hash = 'dang-ky'; }}
+            className={`flex-1 w-full sm:w-auto px-6 py-4 rounded-xl font-heading font-bold sm:text-lg uppercase tracking-wider transition-all duration-300 ${activeTab === 'dang-ky' ? 'bg-[#ccff00] text-[#050505] shadow-[0_0_20px_rgba(204,255,0,0.4)] scale-105' : 'bg-[#111] text-gray-400 hover:text-white border-2 border-transparent hover:border-[#ccff00]/50'}`}
+          >
+            Đăng Ký Học
+          </button>
+          <button 
+            onClick={() => { setActiveTab('dat-xe'); window.location.hash = 'dat-xe'; }}
+            className={`flex-1 w-full sm:w-auto px-6 py-4 rounded-xl font-heading font-bold sm:text-lg uppercase tracking-wider transition-all duration-300 ${activeTab === 'dat-xe' ? 'bg-[#39ff14] text-[#050505] shadow-[0_0_20px_rgba(57,255,20,0.4)] scale-105' : 'bg-[#111] text-gray-400 hover:text-white border-2 border-transparent hover:border-[#39ff14]/50'}`}
+          >
+            Đặt Xe Ngay
+          </button>
+          <button 
+            onClick={() => { setActiveTab('bo-tuc'); window.location.hash = 'bo-tuc'; }}
+            className={`flex-1 w-full sm:w-auto px-6 py-4 rounded-xl font-heading font-bold sm:text-lg uppercase tracking-wider transition-all duration-300 ${activeTab === 'bo-tuc' ? 'bg-[#00bfff] text-[#050505] shadow-[0_0_20px_rgba(0,191,255,0.4)] scale-105' : 'bg-[#111] text-gray-400 hover:text-white border-2 border-transparent hover:border-[#00bfff]/50'}`}
+          >
+            Bổ Túc Tay Lái
+          </button>
+        </div>
+
+        <div className="max-w-2xl mx-auto">
           
           {/* Form 1: Đăng Ký Học Lái Xe */}
+          <AnimatePresence mode="wait">
+            {activeTab === 'dang-ky' && (
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            key="form-dang-ky"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.4 }}
             className="glass-panel p-8 sm:p-10 rounded-2xl border-2 border-[#ccff00] shadow-[0_0_30px_rgba(204,255,0,0.4)] relative overflow-hidden"
           >
             <div className="absolute -top-10 -right-10 w-48 h-48 bg-[#ccff00]/30 blur-[60px] animate-pulse pointer-events-none"></div>
@@ -103,7 +144,7 @@ export default function Services() {
                 <BookOpen className="text-[#ccff00]" size={28} />
               </div>
               <div>
-                <h3 className="text-xl sm:text-2xl xl:text-xl 2xl:text-2xl font-heading font-bold text-white uppercase tracking-wide drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] whitespace-nowrap truncate">Đăng Ký Học Lái Xe</h3>
+                <h3 className="text-xl sm:text-2xl xl:text-xl 2xl:text-2xl font-heading font-bold text-white uppercase tracking-wide drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">Đăng Ký Học Lái Xe</h3>
                 <p className="text-gray-300 text-sm mt-1 font-medium">Khóa học lái xe ô tô chất lượng cao</p>
               </div>
             </div>
@@ -153,13 +194,18 @@ export default function Services() {
               </button>
             </form>
           </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Form 2: Đặt Xe Gia Đình */}
+          <AnimatePresence mode="wait">
+            {activeTab === 'dat-xe' && (
           <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            key="form-dat-xe"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.4 }}
             className="glass-panel p-8 sm:p-10 rounded-2xl border-2 border-[#39ff14] shadow-[0_0_30px_rgba(57,255,20,0.4)] relative overflow-hidden"
           >
             <div className="absolute -top-10 -left-10 w-48 h-48 bg-[#39ff14]/30 blur-[60px] animate-pulse pointer-events-none"></div>
@@ -169,7 +215,7 @@ export default function Services() {
                 <Car className="text-[#39ff14]" size={28} />
               </div>
               <div>
-                <h3 className="text-xl sm:text-2xl xl:text-xl 2xl:text-2xl font-heading font-bold text-white uppercase tracking-wide drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] whitespace-nowrap truncate">Đặt Xe Gia Đình</h3>
+                <h3 className="text-xl sm:text-2xl xl:text-xl 2xl:text-2xl font-heading font-bold text-white uppercase tracking-wide drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">Đặt Xe Gia Đình</h3>
                 <p className="text-gray-300 text-sm mt-1 font-medium">Dịch vụ xe 4 chỗ - 7 chỗ theo yêu cầu</p>
               </div>
             </div>
@@ -231,13 +277,18 @@ export default function Services() {
               </button>
             </form>
           </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Form 3: Bổ Túc Tay Lái */}
+          <AnimatePresence mode="wait">
+            {activeTab === 'bo-tuc' && (
           <motion.div 
+            key="form-bo-tuc"
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.4 }}
             className="glass-panel p-8 sm:p-10 rounded-2xl border-2 border-[#00bfff] shadow-[0_0_30px_rgba(0,191,255,0.4)] relative overflow-hidden"
           >
             <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-[#00bfff]/30 blur-[60px] animate-pulse pointer-events-none"></div>
@@ -247,7 +298,7 @@ export default function Services() {
                 <Shield className="text-[#00bfff]" size={28} />
               </div>
               <div>
-                <h3 className="text-xl sm:text-2xl xl:text-xl 2xl:text-2xl font-heading font-bold text-[#00bfff] uppercase tracking-wide drop-shadow-[0_0_10px_rgba(0,191,255,0.5)] whitespace-nowrap truncate">Bổ Túc Tay Lái</h3>
+                <h3 className="text-xl sm:text-2xl xl:text-xl 2xl:text-2xl font-heading font-bold text-[#00bfff] uppercase tracking-wide drop-shadow-[0_0_10px_rgba(0,191,255,0.5)]">Bổ Túc Tay Lái</h3>
                 <p className="text-gray-200 text-sm mt-1 font-medium drop-shadow-md">Kèm lái an toàn, tự tin vượt mọi cung đường</p>
               </div>
             </div>
@@ -292,6 +343,8 @@ export default function Services() {
               </button>
             </form>
           </motion.div>
+            )}
+          </AnimatePresence>
 
         </div>
       </div>

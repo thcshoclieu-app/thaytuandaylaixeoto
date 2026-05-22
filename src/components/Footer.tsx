@@ -39,10 +39,10 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-heading font-bold text-lg uppercase tracking-wider mb-6 pb-2 border-b border-gray-800">Dịch Vụ</h4>
             <ul className="space-y-4">
-              <li><a href="#services" className="text-gray-400 hover:text-[#ccff00] transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#ccff00]"></span> Học Lái Xe Hạng B</a></li>
-              <li><a href="#services" className="text-gray-400 hover:text-[#ccff00] transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#ccff00]"></span> Học Lái Xe Hạng C</a></li>
-              <li><a href="#services" className="text-gray-400 hover:text-[#39ff14] transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#39ff14]"></span> Đặt Xe Gia Đình</a></li>
-              <li><a href="#services" className="text-gray-400 hover:text-[#ff003c] transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#ff003c]"></span> Bổ Túc Tay Lái</a></li>
+              <li><button onClick={() => { window.location.hash = 'dang-ky'; setTimeout(() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }), 10); }} className="text-gray-400 hover:text-[#ccff00] transition-colors flex items-center gap-2 text-left"><span className="w-1.5 h-1.5 rounded-full bg-[#ccff00] shrink-0"></span> Học Lái Xe Hạng B</button></li>
+              <li><button onClick={() => { window.location.hash = 'dang-ky'; setTimeout(() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }), 10); }} className="text-gray-400 hover:text-[#ccff00] transition-colors flex items-center gap-2 text-left"><span className="w-1.5 h-1.5 rounded-full bg-[#ccff00] shrink-0"></span> Học Lái Xe Hạng C</button></li>
+              <li><button onClick={() => { window.location.hash = 'dat-xe'; setTimeout(() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }), 10); }} className="text-gray-400 hover:text-[#39ff14] transition-colors flex items-center gap-2 text-left"><span className="w-1.5 h-1.5 rounded-full bg-[#39ff14] shrink-0"></span> Đặt Xe Gia Đình</button></li>
+              <li><button onClick={() => { window.location.hash = 'bo-tuc'; setTimeout(() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }), 10); }} className="text-gray-400 hover:text-[#ff003c] transition-colors flex items-center gap-2 text-left"><span className="w-1.5 h-1.5 rounded-full bg-[#ff003c] shrink-0"></span> Bổ Túc Tay Lái</button></li>
             </ul>
           </div>
 
