@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Phone, MapPin, MessageCircle } from 'lucide-react';
+import { Phone, MapPin, MessageCircle, Mail } from 'lucide-react';
 
 export default function Contact() {
   const contactInfo = [
@@ -23,6 +23,13 @@ export default function Contact() {
       value: 'Xã Đức Linh, Tỉnh Lâm Đồng',
       link: 'https://maps.google.com/?q=Đức+Linh,+Lâm+Đồng',
       color: 'red'
+    },
+    {
+      icon: <Mail size={24} className="text-[#00bfff]" />,
+      title: 'Email Hỗ Trợ',
+      value: 'thaytuanlaixedl@gmail.com',
+      link: 'mailto:thaytuanlaixedl@gmail.com',
+      color: 'cyan'
     }
   ];
 
@@ -47,7 +54,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 grow items-stretch justify-items-stretch">
           {contactInfo.map((info, index) => (
             <motion.div
               key={index}
@@ -55,36 +62,41 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="flex justify-stretch w-full"
             >
               <a 
                 href={info.link}
-                target={info.title.includes('Địa Chỉ') ? '_blank' : '_self'}
+                target="_blank"
                 rel="noreferrer"
-                className={`glass-panel p-6 sm:p-8 rounded-3xl flex flex-col items-center text-center group transition-all duration-300 hover:-translate-y-2 border-2 ${
+                className={`w-full glass-panel p-6 sm:p-5 md:p-6 lg:p-4 xl:p-6 rounded-3xl flex flex-col items-center text-center group transition-all duration-300 hover:-translate-y-2 border-2 ${
                   info.color === 'yellow' 
                     ? 'border-[#ccff00] hover:shadow-[0_0_30px_rgba(204,255,0,0.6)] shadow-[0_0_15px_rgba(204,255,0,0.3)] bg-[#111111]/80' 
                     : info.color === 'green' 
                     ? 'border-[#39ff14] hover:shadow-[0_0_30px_rgba(57,255,20,0.6)] shadow-[0_0_15px_rgba(57,255,20,0.3)] bg-[#111111]/80' 
+                    : info.color === 'cyan'
+                    ? 'border-[#00bfff] hover:shadow-[0_0_30px_rgba(0,191,255,0.6)] shadow-[0_0_15px_rgba(0,191,255,0.3)] bg-[#111111]/80'
                     : 'border-[#ff003c] hover:shadow-[0_0_30px_rgba(255,0,60,0.6)] shadow-[0_0_15px_rgba(255,0,60,0.3)] bg-[#111111]/80'
                 } relative overflow-hidden`}
               >
                 {/* Background glow on hover */}
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 ${
-                  info.color === 'yellow' ? 'bg-[#ccff00]' : info.color === 'green' ? 'bg-[#39ff14]' : 'bg-[#ff003c]'
+                  info.color === 'yellow' ? 'bg-[#ccff00]' : info.color === 'green' ? 'bg-[#39ff14]' : info.color === 'cyan' ? 'bg-[#00bfff]' : 'bg-[#ff003c]'
                 }`}></div>
 
-                <div className={`w-16 h-16 rounded-full bg-[#111111] flex items-center justify-center mb-6 border-2 transition-all duration-300 group-hover:scale-110 relative z-10 ${
+                <div className={`w-16 h-16 shrink-0 rounded-full bg-[#111111] flex items-center justify-center mb-6 border-2 transition-all duration-300 group-hover:scale-110 relative z-10 ${
                   info.color === 'yellow' 
                     ? 'border-gray-800 group-hover:border-[#ccff00]/60 group-hover:shadow-[0_0_15px_rgba(204,255,0,0.5)]' 
                     : info.color === 'green' 
                     ? 'border-gray-800 group-hover:border-[#39ff14]/60 group-hover:shadow-[0_0_15px_rgba(57,255,20,0.5)]' 
+                    : info.color === 'cyan'
+                    ? 'border-gray-800 group-hover:border-[#00bfff]/60 group-hover:shadow-[0_0_15px_rgba(0,191,255,0.5)]'
                     : 'border-gray-800 group-hover:border-[#ff003c]/60 group-hover:shadow-[0_0_15px_rgba(255,0,60,0.5)]'
                 }`}>
                   {info.icon}
                 </div>
                 <h4 className="text-gray-400 font-medium mb-2 uppercase tracking-wide text-sm relative z-10">{info.title}</h4>
-                <p className={`text-[15px] sm:text-[17px] md:text-sm lg:text-[17px] xl:text-xl font-heading font-bold text-white transition-colors duration-300 tracking-tight relative z-10 ${
-                  info.color === 'yellow' ? 'group-hover:text-[#ccff00]' : info.color === 'green' ? 'group-hover:text-[#39ff14]' : 'group-hover:text-[#ff003c]'
+                <p className={`text-[13px] min-[360px]:text-[14px] sm:text-[14px] md:text-sm lg:text-[13px] xl:text-[15px] 2xl:text-[17px] font-heading font-bold text-white transition-colors duration-300 tracking-tight relative z-10 break-all w-full ${
+                  info.color === 'yellow' ? 'group-hover:text-[#ccff00]' : info.color === 'green' ? 'group-hover:text-[#39ff14]' : info.color === 'cyan' ? 'group-hover:text-[#00bfff]' : 'group-hover:text-[#ff003c]'
                 }`}>
                   {info.value}
                 </p>

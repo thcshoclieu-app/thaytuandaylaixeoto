@@ -1,4 +1,4 @@
-import { ShieldCheck, MapPin, Phone, Car } from 'lucide-react';
+import { ShieldCheck, MapPin, Phone, Car, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -29,9 +29,9 @@ export default function Footer() {
             <p className="text-gray-400 mb-6 max-w-sm leading-relaxed">
               Trường đào tạo lái xe uy tín, chất lượng tại Lâm Đồng. Cung cấp dịch vụ xe gia đình 4-7 chỗ tiện lợi, an toàn, giá cả hợp lý.
             </p>
-            <div className="flex items-center gap-2 text-[#39ff14] glow-text-green font-medium">
-              <ShieldCheck size={20} />
-              <span>Hỗ trợ 24/7 - Cam kết chất lượng</span>
+            <div className="flex items-center gap-3 text-[#39ff14] font-bold text-xl sm:text-2xl drop-shadow-[0_0_15px_rgba(57,255,20,0.8)]">
+              <ShieldCheck size={28} className="shrink-0" />
+              <span className="tracking-wide">Hỗ trợ 24/7 - Cam kết chất lượng</span>
             </div>
           </div>
 
@@ -57,7 +57,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="tel:0382567838" className="flex items-center gap-3 group hover:text-[#ccff00] transition-colors">
+                <a href="tel:0382567838" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group hover:text-[#ccff00] transition-colors">
                   <Phone size={20} className="text-[#ccff00] shrink-0 group-hover:scale-110 transition-transform" />
                   <span>0382 5678 38</span>
                 </a>
@@ -68,13 +68,19 @@ export default function Footer() {
                   <span>0382 5678 38</span>
                 </a>
               </li>
+              <li>
+                <a href="mailto:thaytuanlaixedl@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group hover:text-[#00bfff] transition-colors">
+                  <Mail size={20} className="text-[#00bfff] shrink-0 group-hover:scale-110 transition-transform" />
+                  <span>thaytuanlaixedl@gmail.com</span>
+                </a>
+              </li>
             </ul>
           </div>
           
         </div>
         
         {/* Bottom bar */}
-        <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="border-t border-gray-900 pt-8 pb-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
             &copy; {new Date().getFullYear()} Học Lái Xe Ô Tô & Đặt Xe Gia Đình. All rights reserved.
           </p>
@@ -82,6 +88,13 @@ export default function Footer() {
             <a href="#" className="hover:text-white transition-colors">Điều khoản dịch vụ</a>
             <a href="#" className="hover:text-white transition-colors">Chính sách bảo mật</a>
           </div>
+        </div>
+        
+        {/* Motivation Quote */}
+        <div className="text-center mt-10 relative overflow-hidden w-full flex justify-center">
+          <p className="font-heading text-[8px] min-[375px]:text-[9px] min-[400px]:text-[10px] sm:text-[13px] md:text-lg lg:text-2xl xl:text-3xl font-bold tracking-wider lg:tracking-[0.1em] uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#ccff00] via-[#39ff14] to-[#ccff00] drop-shadow-[0_0_15px_rgba(204,255,0,0.6)] animate-pulse whitespace-nowrap">
+            Sự hài lòng của quý khách là nguồn động lực cho chúng tôi
+          </p>
         </div>
       </div>
     </footer>
