@@ -14,7 +14,32 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const menuItems = ['Trang chủ', 'Dịch vụ', 'Hỗ trợ 24/7', 'Liên hệ'];
+  const menuItems = [
+    { 
+      name: 'Trang chủ', 
+      id: 'home', 
+      defaultBg: 'bg-[#222222]',
+      hoverColor: 'hover:bg-[#ccff00] hover:border-[#ccff00] hover:text-[#050505] hover:shadow-[0_0_20px_rgba(204,255,0,0.5)]'
+    },
+    { 
+      name: 'Dịch vụ', 
+      id: 'services', 
+      defaultBg: 'bg-[#222222]',
+      hoverColor: 'hover:bg-[#39ff14] hover:border-[#39ff14] hover:text-[#050505] hover:shadow-[0_0_20px_rgba(57,255,20,0.5)]'
+    },
+    { 
+      name: 'Hỗ trợ 24/7', 
+      id: 'footer', 
+      defaultBg: 'bg-[#222222]',
+      hoverColor: 'hover:bg-[#00bfff] hover:border-[#00bfff] hover:text-[#050505] hover:shadow-[0_0_20px_rgba(0,191,255,0.5)]'
+    },
+    { 
+      name: 'Liên hệ', 
+      id: 'contact', 
+      defaultBg: 'bg-[#222222]',
+      hoverColor: 'hover:bg-[#ff003c] hover:border-[#ff003c] hover:text-[#ffffff] hover:shadow-[0_0_20px_rgba(255,0,60,0.5)]'
+    }
+  ];
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -56,13 +81,12 @@ export default function Navbar() {
               <button
                 key={index}
                 onClick={() => {
-                  const idItem = item === 'Trang chủ' ? 'home' : item === 'Dịch vụ' ? 'services' : item === 'Liên hệ' ? 'contact' : 'footer';
-                  scrollToSection(idItem);
+                  scrollToSection(item.id);
                 }}
-                className="relative group px-6 py-2.5 text-gray-300 transition-all duration-300 text-xs xl:text-sm font-bold uppercase tracking-widest whitespace-nowrap rounded-full border border-gray-700 bg-gradient-to-b from-[#2a2a2a] to-[#111111] shadow-[inset_0_1px_2px_rgba(255,255,255,0.15),_0_4px_8px_rgba(0,0,0,0.6)] hover:-translate-y-1 hover:border-[#ccff00] hover:from-[#ccff00] hover:to-[#99cc00] hover:text-black hover:shadow-[0_0_25px_rgba(204,255,0,0.6),_inset_0_2px_4px_rgba(255,255,255,0.7)]"
+                className={`relative group px-6 py-2.5 text-gray-200 transition-all duration-300 text-xs xl:text-sm font-bold uppercase tracking-widest whitespace-nowrap rounded-full border border-gray-800 ${item.defaultBg} shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),_0_2px_4px_rgba(0,0,0,0.4)] hover:-translate-y-1 ${item.hoverColor}`}
               >
                 <span className="relative z-10 transition-all duration-300">
-                  {item}
+                  {item.name}
                 </span>
               </button>
             ))}
@@ -72,14 +96,14 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center">
             <a
               href="tel:0382567838"
-              className="group relative flex items-center gap-3 px-6 py-2.5 rounded-full border-[1.5px] border-[#ff003c] hover:border-[#ccff00] cursor-pointer transition-all duration-300 hover:shadow-[0_0_25px_rgba(204,255,0,0.8)] hover:bg-[#ccff00] bg-[#080808] overflow-hidden"
+              className="group relative flex items-center gap-3 px-6 py-2.5 rounded-full border border-b-[4px] border-[#ff003c] hover:border-[#ccff00] cursor-pointer transition-all duration-300 hover:shadow-[0_0_25px_rgba(204,255,0,0.8)] hover:bg-[#ccff00] bg-[#080808] hover:-translate-y-1 active:border-b active:translate-y-[3px] overflow-hidden"
             >
               <div className="absolute left-4 w-10 h-10 bg-[#ff003c]/25 rounded-full blur-[10px] group-hover:opacity-0 transition-opacity duration-300"></div>
               
               <div className="relative flex items-center justify-center">
-                <Phone size={22} strokeWidth={2.5} className="text-[#ff003c] relative z-10 group-hover:-rotate-12 transition-transform duration-300 drop-shadow-[0_0_5px_rgba(255,0,60,0.5)] group-hover:drop-shadow-none" />
+                <Phone size={22} strokeWidth={2.5} className="text-[#ff003c] group-hover:text-black relative z-10 group-hover:-rotate-12 transition-all duration-300 drop-shadow-[0_0_5px_rgba(255,0,60,0.5)] group-hover:drop-shadow-none" />
               </div>
-              <span className="font-heading font-bold text-xl text-[#ff003c] relative z-10 tracking-[0.1em] drop-shadow-[0_0_5px_rgba(255,0,60,0.5)] group-hover:drop-shadow-none">
+              <span className="font-heading font-bold text-xl text-[#ff003c] group-hover:text-black relative z-10 tracking-[0.1em] drop-shadow-[0_0_5px_rgba(255,0,60,0.5)] group-hover:drop-shadow-none transition-colors duration-300">
                 0382 5678 38
               </span>
             </a>
@@ -110,24 +134,23 @@ export default function Navbar() {
               <button
                 key={index}
                 onClick={() => {
-                  const idItem = item === 'Trang chủ' ? 'home' : item === 'Dịch vụ' ? 'services' : item === 'Liên hệ' ? 'contact' : 'footer';
-                  scrollToSection(idItem);
+                  scrollToSection(item.id);
                 }}
                 className="block w-full text-left px-3 py-4 text-base font-medium text-gray-300 hover:text-[#ccff00] hover:bg-[#111111] uppercase tracking-wider border-b border-gray-800"
               >
-                {item}
+                {item.name}
               </button>
             ))}
             <div className="mt-6 px-3">
               <a
                 href="tel:0382567838"
-                className="flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-[#ff003c]/50 bg-[#ff003c]/10 glow-box-red w-full"
+                className="group flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-b-[4px] border-[#ff003c] bg-[#111111] w-full transition-all duration-300 active:border-b active:translate-y-[3px]"
               >
                 <div className="relative flex items-center justify-center">
                   <span className="absolute inline-flex h-full w-full rounded-full bg-[#ff003c] opacity-40 animate-ping"></span>
                   <Phone size={18} className="text-[#ff003c]" />
                 </div>
-                <span className="font-heading font-bold text-xl text-[#ff003c] glow-text-red">
+                <span className="font-heading font-bold text-xl text-[#ff003c] drop-shadow-[0_0_5px_rgba(255,0,60,0.5)]">
                   0382 5678 38
                 </span>
               </a>

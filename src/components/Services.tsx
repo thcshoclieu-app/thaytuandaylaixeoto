@@ -185,7 +185,7 @@ export default function Services() {
                 <textarea name="notes" rows={3} className="w-full bg-[#111111] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#ccff00] focus:ring-1 focus:ring-[#ccff00] transition-all" placeholder="Bạn có thắc mắc hoặc yêu cầu gì thêm?"></textarea>
               </div>
 
-              <button disabled={submitting === 1} type="submit" className="w-full mt-4 bg-[#ccff00] hover:bg-[#b3e600] text-[#050505] font-bold py-4 rounded-lg flex items-center justify-center gap-2 transition-all glow-box-yellow group disabled:opacity-70 disabled:cursor-not-allowed">
+              <button disabled={submitting === 1} type="submit" className="w-full mt-4 bg-[#ccff00] hover:bg-[#d6ff33] text-[#050505] font-bold py-4 rounded-xl border-b-[5px] border-[#88aa00] hover:border-[#99cc00] hover:-translate-y-1 active:border-b-0 active:translate-y-[5px] flex items-center justify-center gap-2 transition-all glow-box-yellow group disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:active:border-b-[5px] disabled:active:translate-y-0 text-lg">
                 {submitting === 1 ? (
                   <Loader2 size={24} className="animate-spin" />
                 ) : (
@@ -268,7 +268,7 @@ export default function Services() {
                 <input type="text" name="notes" className="w-full bg-[#111111] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#39ff14] focus:ring-1 focus:ring-[#39ff14] transition-all" placeholder="Yêu cầu riêng (vd: có trẻ nhỏ, hành lý nhiều)..." />
               </div>
 
-              <button disabled={submitting === 2} type="submit" className="w-full mt-4 bg-[#39ff14] hover:bg-[#2ce00f] text-[#050505] font-bold py-4 rounded-lg flex items-center justify-center gap-2 transition-all glow-box-green group disabled:opacity-70 disabled:cursor-not-allowed">
+              <button disabled={submitting === 2} type="submit" className="w-full mt-4 bg-[#39ff14] hover:bg-[#52ff33] text-[#050505] font-bold py-4 rounded-xl border-b-[5px] border-[#22aa0c] hover:border-[#2ecc10] hover:-translate-y-1 active:border-b-0 active:translate-y-[5px] flex items-center justify-center gap-2 transition-all glow-box-green group disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:active:border-b-[5px] disabled:active:translate-y-0 text-lg">
                 {submitting === 2 ? (
                   <Loader2 size={24} className="animate-spin" />
                 ) : (
@@ -334,7 +334,7 @@ export default function Services() {
                 <textarea name="notes" rows={3} className="w-full bg-[#111111] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#00bfff] focus:ring-1 focus:ring-[#00bfff] transition-all" placeholder="Vd: Lái xe đường đô thị, lái lên dốc, đỗ xe..."></textarea>
               </div>
 
-              <button disabled={submitting === 3} type="submit" className="w-full mt-4 bg-[#00bfff] hover:bg-[#0099cc] text-[#050505] font-bold py-4 rounded-lg flex items-center justify-center gap-2 transition-all glow-box-cyan group relative overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed">
+              <button disabled={submitting === 3} type="submit" className="w-full mt-4 bg-[#00bfff] hover:bg-[#33ccff] text-[#050505] font-bold py-4 rounded-xl border-b-[5px] border-[#0077aa] hover:border-[#0088cc] hover:-translate-y-1 active:border-b-0 active:translate-y-[5px] flex items-center justify-center gap-2 transition-all glow-box-cyan group relative overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:active:border-b-[5px] disabled:active:translate-y-0 text-lg">
                 {submitting === 3 ? (
                   <Loader2 size={24} className="animate-spin relative z-10" />
                 ) : (
