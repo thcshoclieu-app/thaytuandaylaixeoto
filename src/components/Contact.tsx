@@ -43,13 +43,13 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-heading font-bold uppercase mb-4">
+          <h2 className="text-[clamp(1.8rem,6vw,3rem)] font-heading font-bold uppercase mb-3 sm:mb-4">
             <span className="text-white">Thông Tin </span>
             <span className="text-[#ccff00] glow-text-yellow">Liên Hệ</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-400 max-w-2xl mx-auto text-[clamp(0.9rem,3vw,1.1rem)] px-2">
             Sẵn sàng hỗ trợ bạn 24/7. Hãy liên hệ với chúng tôi bất cứ khi nào bạn cần.
           </p>
         </motion.div>
@@ -95,7 +95,7 @@ export default function Contact() {
                   {info.icon}
                 </div>
                 <h4 className="text-gray-400 font-medium mb-2 uppercase tracking-wide text-sm relative z-10">{info.title}</h4>
-                <p className={`text-[4vw] min-[375px]:text-[14px] sm:text-base md:text-sm lg:text-[13px] xl:text-[15px] 2xl:text-[17px] font-heading font-bold text-white transition-colors duration-300 tracking-tight relative z-10 break-all sm:break-words w-full ${
+                <p className={`text-[clamp(13px,3.5vw,17px)] font-heading font-bold text-white transition-colors duration-300 tracking-tight relative z-10 break-all sm:break-words w-full ${
                   info.color === 'yellow' ? 'group-hover:text-[#ccff00]' : info.color === 'green' ? 'group-hover:text-[#39ff14]' : info.color === 'cyan' ? 'group-hover:text-[#00bfff]' : 'group-hover:text-[#ff003c]'
                 }`}>
                   {info.value}

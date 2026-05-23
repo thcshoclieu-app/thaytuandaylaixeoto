@@ -91,34 +91,34 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-heading font-bold uppercase mb-4">
+          <h2 className="text-[clamp(1.8rem,6vw,3rem)] font-heading font-bold uppercase mb-3 sm:mb-4">
             <span className="text-white">Dịch Vụ </span>
             <span className="text-[#ccff00] glow-text-yellow">Nổi Bật</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-400 max-w-2xl mx-auto text-[clamp(0.9rem,3vw,1.1rem)] px-2">
             Đội ngũ chuyên nghiệp, xe đời mới, cam kết chất lượng đào tạo và dịch vụ di chuyển an toàn hàng đầu.
           </p>
         </motion.div>
 
         {/* Tab Buttons */}
-        <div className="flex flex-row flex-wrap items-center justify-center gap-2 sm:gap-4 mb-10 relative z-10 w-full max-w-4xl mx-auto">
+        <div className="flex flex-row flex-wrap items-center justify-center gap-2 sm:gap-4 mb-8 sm:mb-10 relative z-10 w-full max-w-4xl mx-auto px-1">
           <button 
             onClick={() => { setActiveTab('dang-ky'); window.location.hash = 'dang-ky'; }}
-            className={`flex-1 min-w-[140px] px-3 py-3 sm:px-6 sm:py-4 rounded-xl font-heading font-bold text-[11px] min-[375px]:text-xs sm:text-lg uppercase tracking-wider transition-all duration-300 ${activeTab === 'dang-ky' ? 'bg-[#ccff00] text-[#050505] shadow-[0_0_20px_rgba(204,255,0,0.4)] scale-105' : 'bg-[#111] text-gray-400 hover:text-white border-2 border-transparent hover:border-[#ccff00]/50'}`}
+            className={`flex-[1_1_30%] min-w-[90px] px-2 py-3 sm:px-6 sm:py-4 rounded-xl font-heading font-bold text-[clamp(10px,2.5vw,18px)] uppercase tracking-wider transition-all duration-300 ${activeTab === 'dang-ky' ? 'bg-[#ccff00] text-[#050505] shadow-[0_0_20px_rgba(204,255,0,0.4)] scale-105' : 'bg-[#111] text-gray-400 hover:text-white border-2 border-transparent hover:border-[#ccff00]/50'}`}
           >
             Đăng Ký Học
           </button>
           <button 
             onClick={() => { setActiveTab('dat-xe'); window.location.hash = 'dat-xe'; }}
-            className={`flex-1 min-w-[140px] px-3 py-3 sm:px-6 sm:py-4 rounded-xl font-heading font-bold text-[11px] min-[375px]:text-xs sm:text-lg uppercase tracking-wider transition-all duration-300 ${activeTab === 'dat-xe' ? 'bg-[#39ff14] text-[#050505] shadow-[0_0_20px_rgba(57,255,20,0.4)] scale-105' : 'bg-[#111] text-gray-400 hover:text-white border-2 border-transparent hover:border-[#39ff14]/50'}`}
+            className={`flex-[1_1_30%] min-w-[90px] px-2 py-3 sm:px-6 sm:py-4 rounded-xl font-heading font-bold text-[clamp(10px,2.5vw,18px)] uppercase tracking-wider transition-all duration-300 ${activeTab === 'dat-xe' ? 'bg-[#39ff14] text-[#050505] shadow-[0_0_20px_rgba(57,255,20,0.4)] scale-105' : 'bg-[#111] text-gray-400 hover:text-white border-2 border-transparent hover:border-[#39ff14]/50'}`}
           >
             Đặt Xe Ngay
           </button>
           <button 
             onClick={() => { setActiveTab('bo-tuc'); window.location.hash = 'bo-tuc'; }}
-            className={`flex-1 min-w-[140px] px-3 py-3 sm:px-6 sm:py-4 rounded-xl font-heading font-bold text-[11px] min-[375px]:text-xs sm:text-lg uppercase tracking-wider transition-all duration-300 ${activeTab === 'bo-tuc' ? 'bg-[#00bfff] text-[#050505] shadow-[0_0_20px_rgba(0,191,255,0.4)] scale-105' : 'bg-[#111] text-gray-400 hover:text-white border-2 border-transparent hover:border-[#00bfff]/50'}`}
+            className={`flex-[1_1_30%] min-w-[90px] px-2 py-3 sm:px-6 sm:py-4 rounded-xl font-heading font-bold text-[clamp(10px,2.5vw,18px)] uppercase tracking-wider transition-all duration-300 ${activeTab === 'bo-tuc' ? 'bg-[#00bfff] text-[#050505] shadow-[0_0_20px_rgba(0,191,255,0.4)] scale-105' : 'bg-[#111] text-gray-400 hover:text-white border-2 border-transparent hover:border-[#00bfff]/50'}`}
           >
             Bổ Túc Tay Lái
           </button>
