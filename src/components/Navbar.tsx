@@ -51,7 +51,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-10">
+          <div className="hidden lg:flex items-center space-x-3 xl:space-x-6">
             {menuItems.map((item, index) => (
               <button
                 key={index}
@@ -59,12 +59,11 @@ export default function Navbar() {
                   const idItem = item === 'Trang chủ' ? 'home' : item === 'Dịch vụ' ? 'services' : item === 'Liên hệ' ? 'contact' : 'footer';
                   scrollToSection(idItem);
                 }}
-                className="relative group px-2 py-2 text-gray-300 hover:text-[#ccff00] transition-colors duration-300 text-sm font-bold uppercase tracking-widest whitespace-nowrap"
+                className="relative group px-6 py-2.5 text-gray-300 transition-all duration-300 text-xs xl:text-sm font-bold uppercase tracking-widest whitespace-nowrap rounded-full border border-gray-700 bg-gradient-to-b from-[#2a2a2a] to-[#111111] shadow-[inset_0_1px_2px_rgba(255,255,255,0.15),_0_4px_8px_rgba(0,0,0,0.6)] hover:-translate-y-1 hover:border-[#ccff00] hover:from-[#ccff00] hover:to-[#99cc00] hover:text-black hover:shadow-[0_0_25px_rgba(204,255,0,0.6),_inset_0_2px_4px_rgba(255,255,255,0.7)]"
               >
-                <span className="relative z-10 group-hover:drop-shadow-[0_0_8px_rgba(204,255,0,0.8)] transition-all duration-300">
+                <span className="relative z-10 transition-all duration-300">
                   {item}
                 </span>
-                <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#ccff00] origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out shadow-[0_0_10px_rgba(204,255,0,0.8)] rounded-full"></span>
               </button>
             ))}
           </div>

@@ -92,7 +92,7 @@ export default function Footer() {
         
         {/* Motivation Quote */}
         <div className="text-center mt-10 relative overflow-hidden w-full flex justify-center">
-          <p className="font-heading text-[8px] min-[375px]:text-[9px] min-[400px]:text-[10px] sm:text-[13px] md:text-lg lg:text-2xl xl:text-3xl font-bold tracking-wider lg:tracking-[0.1em] uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#ccff00] via-[#39ff14] to-[#ccff00] drop-shadow-[0_0_15px_rgba(204,255,0,0.6)] animate-pulse whitespace-nowrap">
+          <p className="font-heading text-[8px] min-[375px]:text-[9px] min-[400px]:text-[10px] sm:text-[13px] md:text-lg lg:text-2xl xl:text-3xl font-bold tracking-wider lg:tracking-[0.1em] uppercase text-[#ccff00] drop-shadow-[0_0_15px_rgba(204,255,0,0.8)] whitespace-nowrap">
             Sự hài lòng của quý khách là nguồn động lực cho chúng tôi
           </p>
         </div>
