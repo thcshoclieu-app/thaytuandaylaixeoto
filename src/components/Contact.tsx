@@ -95,7 +95,7 @@ export default function Contact() {
                   {info.icon}
                 </div>
                 <h4 className="text-gray-400 font-medium mb-2 uppercase tracking-wide text-sm relative z-10">{info.title}</h4>
-                <p className={`text-[13px] min-[360px]:text-[14px] sm:text-[14px] md:text-sm lg:text-[13px] xl:text-[15px] 2xl:text-[17px] font-heading font-bold text-white transition-colors duration-300 tracking-tight relative z-10 break-all w-full ${
+                <p className={`text-[4vw] min-[375px]:text-[14px] sm:text-base md:text-sm lg:text-[13px] xl:text-[15px] 2xl:text-[17px] font-heading font-bold text-white transition-colors duration-300 tracking-tight relative z-10 break-all sm:break-words w-full ${
                   info.color === 'yellow' ? 'group-hover:text-[#ccff00]' : info.color === 'green' ? 'group-hover:text-[#39ff14]' : info.color === 'cyan' ? 'group-hover:text-[#00bfff]' : 'group-hover:text-[#ff003c]'
                 }`}>
                   {info.value}

@@ -91,8 +91,8 @@ export default function Footer() {
         </div>
         
         {/* Motivation Quote */}
-        <div className="text-center mt-10 relative overflow-hidden w-full flex justify-center">
-          <p className="font-heading text-[8px] min-[375px]:text-[9px] min-[400px]:text-[10px] sm:text-[13px] md:text-lg lg:text-2xl xl:text-3xl font-bold tracking-wider lg:tracking-[0.1em] uppercase text-[#ccff00] drop-shadow-[0_0_15px_rgba(204,255,0,0.8)] whitespace-nowrap">
+        <div className="text-center mt-6 sm:mt-10 relative overflow-hidden w-full flex justify-center px-2">
+          <p className="font-heading text-[2.6vw] min-[500px]:text-[13px] sm:text-[15px] md:text-lg lg:text-2xl xl:text-[26px] 2xl:text-3xl font-bold tracking-[0.05em] uppercase text-[#ccff00] drop-shadow-[0_0_15px_rgba(204,255,0,0.8)] whitespace-nowrap w-full">
             Sự hài lòng của quý khách là nguồn động lực cho chúng tôi
           </p>
         </div>

@@ -11,7 +11,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section id="home" className="relative min-h-[100svh] flex items-center justify-center pt-24 pb-12 lg:pt-20 lg:pb-0 overflow-hidden">
       {/* Background with abstract neon elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-[20%] left-[10%] w-72 h-72 bg-[#ccff00] rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-pulse"></div>
@@ -27,12 +27,12 @@ export default function Hero() {
           className="space-y-8"
         >
           {/* Main heading */}
-          <div className="flex flex-col w-full relative z-20 cursor-default gap-2 sm:gap-4 md:gap-6 lg:gap-8 overflow-visible py-4">
+          <div className="flex flex-col w-full relative z-20 cursor-default gap-2 sm:gap-4 md:gap-6 lg:gap-8 overflow-visible py-4 sm:py-8">
             <motion.h1 
               initial={{ opacity: 0, x: -60 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="text-[28px] min-[375px]:text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold uppercase leading-[1.1] tracking-tight text-left drop-shadow-2xl ml-[5%] sm:ml-[10%] flex whitespace-nowrap items-center"
+              className="text-[6.5vw] sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold uppercase leading-[1.1] tracking-tight text-left drop-shadow-2xl ml-[2%] sm:ml-[10%] flex whitespace-nowrap items-center"
             >
               <span className="text-white transition-colors duration-300 hover:text-gray-200 mr-2 sm:mr-4">Làm chủ </span>
               <span className="text-[#ccff00] glow-text-yellow relative inline-block group shrink-0">
@@ -45,7 +45,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: 60 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="text-[28px] min-[375px]:text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold uppercase leading-[1.1] tracking-tight text-right drop-shadow-2xl mr-[5%] sm:mr-[10%] flex whitespace-nowrap items-center justify-end"
+              className="text-[6.5vw] sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold uppercase leading-[1.1] tracking-tight text-right drop-shadow-2xl mr-[2%] sm:mr-[10%] flex whitespace-nowrap items-center justify-end"
             >
               <span className="text-white transition-colors duration-300 hover:text-gray-200 mr-2 sm:mr-4">Làm chủ </span>
               <span className="text-[#39ff14] glow-text-green relative inline-block group shrink-0">

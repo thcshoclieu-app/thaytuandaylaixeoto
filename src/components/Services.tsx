@@ -103,22 +103,22 @@ export default function Services() {
         </motion.div>
 
         {/* Tab Buttons */}
-        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 mb-10 relative z-10 w-full max-w-4xl mx-auto">
+        <div className="flex flex-row flex-wrap items-center justify-center gap-2 sm:gap-4 mb-10 relative z-10 w-full max-w-4xl mx-auto">
           <button 
             onClick={() => { setActiveTab('dang-ky'); window.location.hash = 'dang-ky'; }}
-            className={`flex-1 w-full sm:w-auto px-6 py-4 rounded-xl font-heading font-bold sm:text-lg uppercase tracking-wider transition-all duration-300 ${activeTab === 'dang-ky' ? 'bg-[#ccff00] text-[#050505] shadow-[0_0_20px_rgba(204,255,0,0.4)] scale-105' : 'bg-[#111] text-gray-400 hover:text-white border-2 border-transparent hover:border-[#ccff00]/50'}`}
+            className={`flex-1 min-w-[140px] px-3 py-3 sm:px-6 sm:py-4 rounded-xl font-heading font-bold text-[11px] min-[375px]:text-xs sm:text-lg uppercase tracking-wider transition-all duration-300 ${activeTab === 'dang-ky' ? 'bg-[#ccff00] text-[#050505] shadow-[0_0_20px_rgba(204,255,0,0.4)] scale-105' : 'bg-[#111] text-gray-400 hover:text-white border-2 border-transparent hover:border-[#ccff00]/50'}`}
           >
             Đăng Ký Học
           </button>
           <button 
             onClick={() => { setActiveTab('dat-xe'); window.location.hash = 'dat-xe'; }}
-            className={`flex-1 w-full sm:w-auto px-6 py-4 rounded-xl font-heading font-bold sm:text-lg uppercase tracking-wider transition-all duration-300 ${activeTab === 'dat-xe' ? 'bg-[#39ff14] text-[#050505] shadow-[0_0_20px_rgba(57,255,20,0.4)] scale-105' : 'bg-[#111] text-gray-400 hover:text-white border-2 border-transparent hover:border-[#39ff14]/50'}`}
+            className={`flex-1 min-w-[140px] px-3 py-3 sm:px-6 sm:py-4 rounded-xl font-heading font-bold text-[11px] min-[375px]:text-xs sm:text-lg uppercase tracking-wider transition-all duration-300 ${activeTab === 'dat-xe' ? 'bg-[#39ff14] text-[#050505] shadow-[0_0_20px_rgba(57,255,20,0.4)] scale-105' : 'bg-[#111] text-gray-400 hover:text-white border-2 border-transparent hover:border-[#39ff14]/50'}`}
           >
             Đặt Xe Ngay
           </button>
           <button 
             onClick={() => { setActiveTab('bo-tuc'); window.location.hash = 'bo-tuc'; }}
-            className={`flex-1 w-full sm:w-auto px-6 py-4 rounded-xl font-heading font-bold sm:text-lg uppercase tracking-wider transition-all duration-300 ${activeTab === 'bo-tuc' ? 'bg-[#00bfff] text-[#050505] shadow-[0_0_20px_rgba(0,191,255,0.4)] scale-105' : 'bg-[#111] text-gray-400 hover:text-white border-2 border-transparent hover:border-[#00bfff]/50'}`}
+            className={`flex-1 min-w-[140px] px-3 py-3 sm:px-6 sm:py-4 rounded-xl font-heading font-bold text-[11px] min-[375px]:text-xs sm:text-lg uppercase tracking-wider transition-all duration-300 ${activeTab === 'bo-tuc' ? 'bg-[#00bfff] text-[#050505] shadow-[0_0_20px_rgba(0,191,255,0.4)] scale-105' : 'bg-[#111] text-gray-400 hover:text-white border-2 border-transparent hover:border-[#00bfff]/50'}`}
           >
             Bổ Túc Tay Lái
           </button>
@@ -135,7 +135,7 @@ export default function Services() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.4 }}
-            className="glass-panel p-8 sm:p-10 rounded-2xl border-2 border-[#ccff00] shadow-[0_0_30px_rgba(204,255,0,0.4)] relative overflow-hidden"
+            className="glass-panel p-5 sm:p-10 rounded-2xl border-2 border-[#ccff00] shadow-[0_0_30px_rgba(204,255,0,0.4)] relative overflow-hidden"
           >
             <div className="absolute -top-10 -right-10 w-48 h-48 bg-[#ccff00]/30 blur-[60px] animate-pulse pointer-events-none"></div>
             
@@ -206,7 +206,7 @@ export default function Services() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.4 }}
-            className="glass-panel p-8 sm:p-10 rounded-2xl border-2 border-[#39ff14] shadow-[0_0_30px_rgba(57,255,20,0.4)] relative overflow-hidden"
+            className="glass-panel p-5 sm:p-10 rounded-2xl border-2 border-[#39ff14] shadow-[0_0_30px_rgba(57,255,20,0.4)] relative overflow-hidden"
           >
             <div className="absolute -top-10 -left-10 w-48 h-48 bg-[#39ff14]/30 blur-[60px] animate-pulse pointer-events-none"></div>
             
@@ -289,7 +289,7 @@ export default function Services() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.4 }}
-            className="glass-panel p-8 sm:p-10 rounded-2xl border-2 border-[#00bfff] shadow-[0_0_30px_rgba(0,191,255,0.4)] relative overflow-hidden"
+            className="glass-panel p-5 sm:p-10 rounded-2xl border-2 border-[#00bfff] shadow-[0_0_30px_rgba(0,191,255,0.4)] relative overflow-hidden"
           >
             <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-[#00bfff]/30 blur-[60px] animate-pulse pointer-events-none"></div>
             
