@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Send, Car, BookOpen, Shield, CheckCircle, Loader2 } from 'lucide-react';
+import { Send, Car, BookOpen, Shield, CheckCircle, Loader2, ArrowRight } from 'lucide-react';
 
 export default function Services() {
   const [submitting, setSubmitting] = useState<number | null>(null);
@@ -106,21 +106,24 @@ export default function Services() {
         <div className="flex flex-row flex-wrap items-center justify-center gap-2 sm:gap-4 mb-8 sm:mb-10 relative z-10 w-full max-w-4xl mx-auto px-1">
           <button 
             onClick={() => { setActiveTab('dang-ky'); window.location.hash = 'dang-ky'; }}
-            className={`flex-[1_1_30%] min-w-[90px] px-2 py-3 sm:px-6 sm:py-4 rounded-xl font-heading font-bold text-[clamp(10px,2.5vw,18px)] uppercase tracking-wider transition-all duration-300 ${activeTab === 'dang-ky' ? 'bg-[#ccff00] text-[#050505] shadow-[0_0_20px_rgba(204,255,0,0.4)] scale-105' : 'bg-[#111] text-gray-400 hover:text-white border-2 border-transparent hover:border-[#ccff00]/50'}`}
+            className={`flex-[1_1_30%] min-w-[90px] px-2 py-3 sm:px-6 sm:py-4 rounded-xl font-heading font-bold text-[clamp(10px,2.5vw,18px)] uppercase tracking-wider transition-all duration-300 border-b-[5px] active:border-b-0 active:translate-y-[5px] hover:-translate-y-1 flex items-center justify-center gap-1 sm:gap-2 ${activeTab === 'dang-ky' ? 'bg-[#ccff00] text-[#050505] border-[#88aa00] shadow-[0_0_20px_rgba(204,255,0,0.6)] hover:bg-[#d6ff33] hover:shadow-[0_0_30px_rgba(204,255,0,0.8)]' : 'bg-[#222] text-gray-300 border-[#111] hover:bg-[#ccff00] hover:text-[#050505] hover:border-[#88aa00] hover:shadow-[0_0_20px_rgba(204,255,0,0.6)]'}`}
           >
             Đăng Ký Học
+            <ArrowRight size={16} className="hidden sm:inline-block" />
           </button>
           <button 
             onClick={() => { setActiveTab('dat-xe'); window.location.hash = 'dat-xe'; }}
-            className={`flex-[1_1_30%] min-w-[90px] px-2 py-3 sm:px-6 sm:py-4 rounded-xl font-heading font-bold text-[clamp(10px,2.5vw,18px)] uppercase tracking-wider transition-all duration-300 ${activeTab === 'dat-xe' ? 'bg-[#39ff14] text-[#050505] shadow-[0_0_20px_rgba(57,255,20,0.4)] scale-105' : 'bg-[#111] text-gray-400 hover:text-white border-2 border-transparent hover:border-[#39ff14]/50'}`}
+            className={`flex-[1_1_30%] min-w-[90px] px-2 py-3 sm:px-6 sm:py-4 rounded-xl font-heading font-bold text-[clamp(10px,2.5vw,18px)] uppercase tracking-wider transition-all duration-300 border-b-[5px] active:border-b-0 active:translate-y-[5px] hover:-translate-y-1 flex items-center justify-center gap-1 sm:gap-2 ${activeTab === 'dat-xe' ? 'bg-[#39ff14] text-[#050505] border-[#22aa0c] shadow-[0_0_20px_rgba(57,255,20,0.6)] hover:bg-[#52ff33] hover:shadow-[0_0_30px_rgba(57,255,20,0.8)]' : 'bg-[#222] text-gray-300 border-[#111] hover:bg-[#39ff14] hover:text-[#050505] hover:border-[#22aa0c] hover:shadow-[0_0_20px_rgba(57,255,20,0.6)]'}`}
           >
             Đặt Xe Ngay
+            <Car size={16} className="hidden sm:inline-block" />
           </button>
           <button 
             onClick={() => { setActiveTab('bo-tuc'); window.location.hash = 'bo-tuc'; }}
-            className={`flex-[1_1_30%] min-w-[90px] px-2 py-3 sm:px-6 sm:py-4 rounded-xl font-heading font-bold text-[clamp(10px,2.5vw,18px)] uppercase tracking-wider transition-all duration-300 ${activeTab === 'bo-tuc' ? 'bg-[#00bfff] text-[#050505] shadow-[0_0_20px_rgba(0,191,255,0.4)] scale-105' : 'bg-[#111] text-gray-400 hover:text-white border-2 border-transparent hover:border-[#00bfff]/50'}`}
+            className={`flex-[1_1_30%] min-w-[90px] px-2 py-3 sm:px-6 sm:py-4 rounded-xl font-heading font-bold text-[clamp(10px,2.5vw,18px)] uppercase tracking-wider transition-all duration-300 border-b-[5px] active:border-b-0 active:translate-y-[5px] hover:-translate-y-1 flex items-center justify-center gap-1 sm:gap-2 ${activeTab === 'bo-tuc' ? 'bg-[#00bfff] text-[#050505] border-[#0077aa] shadow-[0_0_20px_rgba(0,191,255,0.6)] hover:bg-[#33ccff] hover:shadow-[0_0_30px_rgba(0,191,255,0.8)]' : 'bg-[#222] text-gray-300 border-[#111] hover:bg-[#00bfff] hover:text-[#050505] hover:border-[#0077aa] hover:shadow-[0_0_20px_rgba(0,191,255,0.6)]'}`}
           >
             Bổ Túc Tay Lái
+            <Shield size={16} className="hidden sm:inline-block" />
           </button>
         </div>
 

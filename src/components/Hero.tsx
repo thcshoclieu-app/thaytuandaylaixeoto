@@ -11,7 +11,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-[100svh] flex items-center justify-center pt-28 pb-16 lg:pt-20 lg:pb-0">
+    <section id="home" className="relative min-h-[100svh] landscape:min-h-[100vw] lg:landscape:min-h-[100svh] flex flex-col items-center justify-center pt-[100px] pb-10 sm:pt-[120px] sm:pb-16 lg:pt-20 lg:pb-0">
       {/* Background with abstract neon elements */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[20%] left-[10%] w-72 h-72 bg-[#ccff00] rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-pulse"></div>
@@ -63,10 +63,10 @@ export default function Hero() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-6 mt-8 sm:mt-12">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-6 mt-6 sm:mt-12 w-full px-2 max-w-[400px] sm:max-w-none mx-auto">
             <button
               onClick={() => scrollToServices('dang-ky')}
-              className="group relative px-8 py-4 bg-[#ccff00] text-[#050505] font-heading font-bold text-lg uppercase tracking-wider overflow-hidden rounded-md transition-all hover:scale-105 glow-box-yellow w-full sm:w-auto flex items-center justify-center gap-2"
+              className="group relative px-6 md:px-8 py-3.5 md:py-4 bg-[#ccff00] text-[#050505] font-heading font-bold text-base md:text-lg uppercase tracking-wider rounded-xl border-b-[5px] border-[#88aa00] hover:bg-[#d6ff33] hover:border-[#99cc00] hover:-translate-y-1 active:border-b-0 active:translate-y-[5px] transition-all glow-box-yellow w-full sm:w-auto flex items-center justify-center gap-2 overflow-hidden"
             >
               <span className="relative z-10">Đăng Ký Học</span>
               <ArrowRight size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />
@@ -75,7 +75,7 @@ export default function Hero() {
 
             <button
               onClick={() => scrollToServices('dat-xe')}
-              className="group relative px-8 py-4 bg-[#39ff14] text-[#050505] font-heading font-bold text-lg uppercase tracking-wider overflow-hidden rounded-md transition-all hover:scale-105 glow-box-green w-full sm:w-auto flex items-center justify-center gap-2"
+              className="group relative px-6 md:px-8 py-3.5 md:py-4 bg-[#39ff14] text-[#050505] font-heading font-bold text-base md:text-lg uppercase tracking-wider rounded-xl border-b-[5px] border-[#22aa0c] hover:bg-[#52ff33] hover:border-[#2ecc10] hover:-translate-y-1 active:border-b-0 active:translate-y-[5px] transition-all glow-box-green w-full sm:w-auto flex items-center justify-center gap-2 overflow-hidden"
             >
               <span className="relative z-10">Đặt Xe Ngay</span>
               <Car size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />
@@ -84,7 +84,7 @@ export default function Hero() {
 
             <button
               onClick={() => scrollToServices('bo-tuc')}
-              className="group relative px-8 py-4 bg-[#00bfff] text-[#050505] font-heading font-bold text-lg uppercase tracking-wider overflow-hidden rounded-md transition-all hover:scale-105 glow-box-cyan w-full sm:w-auto flex items-center justify-center gap-2"
+              className="group relative px-6 md:px-8 py-3.5 md:py-4 bg-[#00bfff] text-[#050505] font-heading font-bold text-base md:text-lg uppercase tracking-wider rounded-xl border-b-[5px] border-[#0077aa] hover:bg-[#33ccff] hover:border-[#0088cc] hover:-translate-y-1 active:border-b-0 active:translate-y-[5px] transition-all glow-box-cyan w-full sm:w-auto flex items-center justify-center gap-2 overflow-hidden"
             >
               <span className="relative z-10">Bổ Túc Tay Lái</span>
               <Shield size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />
