@@ -93,7 +93,7 @@ export default function Footer() {
         {/* Motivation Quote */}
         <div className="text-center mt-6 sm:mt-10 relative overflow-hidden w-full flex justify-center px-2">
           <p className="font-heading text-[clamp(9px,3vw,30px)] font-bold tracking-[0.05em] uppercase text-[#ccff00] drop-shadow-[0_0_15px_rgba(204,255,0,0.8)] whitespace-nowrap w-full">
-            Sự hài lòng của quý khách là nguồn động lực cho chúng tôi
+            Niềm tin của bạn, trách nhiệm của chúng tôi
           </p>
         </div>
       </div>
