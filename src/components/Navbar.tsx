@@ -18,26 +18,30 @@ export default function Navbar() {
     { 
       name: 'Trang chủ', 
       id: 'home', 
-      defaultBg: 'bg-[#222222]',
-      hoverColor: 'hover:bg-[#ccff00] hover:border-[#ccff00] hover:text-[#050505] hover:shadow-[0_0_20px_rgba(204,255,0,0.5)]'
+      defaultBg: 'bg-[#111111]',
+      baseShadow: 'shadow-[0_4px_15px_rgba(204,255,0,0.15)]',
+      hoverColor: 'hover:bg-[#ccff00] hover:border-[#ccff00] hover:border-b-[#88aa00] hover:text-[#050505] hover:shadow-[0_10px_30px_rgba(204,255,0,0.5)]'
     },
     { 
       name: 'Dịch vụ', 
       id: 'services', 
-      defaultBg: 'bg-[#222222]',
-      hoverColor: 'hover:bg-[#39ff14] hover:border-[#39ff14] hover:text-[#050505] hover:shadow-[0_0_20px_rgba(57,255,20,0.5)]'
+      defaultBg: 'bg-[#111111]',
+      baseShadow: 'shadow-[0_4px_15px_rgba(57,255,20,0.15)]',
+      hoverColor: 'hover:bg-[#39ff14] hover:border-[#39ff14] hover:border-b-[#22aa0c] hover:text-[#050505] hover:shadow-[0_10px_30px_rgba(57,255,20,0.5)]'
     },
     { 
       name: 'Hỗ trợ 24/7', 
       id: 'footer', 
-      defaultBg: 'bg-[#222222]',
-      hoverColor: 'hover:bg-[#00bfff] hover:border-[#00bfff] hover:text-[#050505] hover:shadow-[0_0_20px_rgba(0,191,255,0.5)]'
+      defaultBg: 'bg-[#111111]',
+      baseShadow: 'shadow-[0_4px_15px_rgba(0,191,255,0.15)]',
+      hoverColor: 'hover:bg-[#00bfff] hover:border-[#00bfff] hover:border-b-[#0077aa] hover:text-[#050505] hover:shadow-[0_10px_30px_rgba(0,191,255,0.5)]'
     },
     { 
       name: 'Liên hệ', 
       id: 'contact', 
-      defaultBg: 'bg-[#222222]',
-      hoverColor: 'hover:bg-[#ff003c] hover:border-[#ff003c] hover:text-[#ffffff] hover:shadow-[0_0_20px_rgba(255,0,60,0.5)]'
+      defaultBg: 'bg-[#111111]',
+      baseShadow: 'shadow-[0_4px_15px_rgba(255,0,60,0.15)]',
+      hoverColor: 'hover:bg-[#ff003c] hover:border-[#ff003c] hover:border-b-[#aa0022] hover:text-[#ffffff] hover:shadow-[0_10px_30px_rgba(255,0,60,0.5)]'
     }
   ];
 
@@ -83,7 +87,7 @@ export default function Navbar() {
                 onClick={() => {
                   scrollToSection(item.id);
                 }}
-                className={`relative group px-6 py-2.5 text-gray-200 transition-all duration-300 text-xs xl:text-sm font-bold uppercase tracking-widest whitespace-nowrap rounded-full border border-gray-800 ${item.defaultBg} shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),_0_2px_4px_rgba(0,0,0,0.4)] hover:-translate-y-1 ${item.hoverColor}`}
+                className={`relative group px-6 py-2.5 text-gray-200 transition-all duration-300 text-xs xl:text-sm font-bold uppercase tracking-widest whitespace-nowrap rounded-full border border-b-[4px] border-gray-800 ${item.defaultBg} ${item.baseShadow} active:border-b active:translate-y-[3px] hover:-translate-y-1 ${item.hoverColor}`}
               >
                 <span className="relative z-10 transition-all duration-300">
                   {item.name}

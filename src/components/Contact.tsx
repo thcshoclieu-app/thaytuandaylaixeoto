@@ -68,14 +68,14 @@ export default function Contact() {
                 href={info.link}
                 target="_blank"
                 rel="noreferrer"
-                className={`w-full glass-panel p-6 sm:p-5 md:p-6 lg:p-4 xl:p-6 rounded-3xl flex flex-col items-center text-center group transition-all duration-300 hover:-translate-y-2 border-2 ${
+                className={`w-full p-6 sm:p-5 md:p-6 lg:p-4 xl:p-6 rounded-3xl flex flex-col items-center text-center group transition-all duration-300 hover:-translate-y-2 border border-b-[6px] active:border-b-2 active:translate-y-[4px] ${
                   info.color === 'yellow' 
-                    ? 'border-[#ccff00] hover:shadow-[0_0_30px_rgba(204,255,0,0.6)] shadow-[0_0_15px_rgba(204,255,0,0.3)] bg-[#111111]/80' 
+                    ? 'border-gray-800 border-b-[#88aa00] hover:border-b-[#ccff00] hover:shadow-[0_10px_30px_rgba(204,255,0,0.5)] shadow-[0_5px_15px_rgba(204,255,0,0.2)] bg-[#111111]' 
                     : info.color === 'green' 
-                    ? 'border-[#39ff14] hover:shadow-[0_0_30px_rgba(57,255,20,0.6)] shadow-[0_0_15px_rgba(57,255,20,0.3)] bg-[#111111]/80' 
+                    ? 'border-gray-800 border-b-[#22aa0c] hover:border-b-[#39ff14] hover:shadow-[0_10px_30px_rgba(57,255,20,0.5)] shadow-[0_5px_15px_rgba(57,255,20,0.2)] bg-[#111111]' 
                     : info.color === 'cyan'
-                    ? 'border-[#00bfff] hover:shadow-[0_0_30px_rgba(0,191,255,0.6)] shadow-[0_0_15px_rgba(0,191,255,0.3)] bg-[#111111]/80'
-                    : 'border-[#ff003c] hover:shadow-[0_0_30px_rgba(255,0,60,0.6)] shadow-[0_0_15px_rgba(255,0,60,0.3)] bg-[#111111]/80'
+                    ? 'border-gray-800 border-b-[#0077aa] hover:border-b-[#00bfff] hover:shadow-[0_10px_30px_rgba(0,191,255,0.5)] shadow-[0_5px_15px_rgba(0,191,255,0.2)] bg-[#111111]'
+                    : 'border-gray-800 border-b-[#aa0022] hover:border-b-[#ff003c] hover:shadow-[0_10px_30px_rgba(255,0,60,0.5)] shadow-[0_5px_15px_rgba(255,0,60,0.2)] bg-[#111111]'
                 } relative overflow-hidden`}
               >
                 {/* Background glow on hover */}
